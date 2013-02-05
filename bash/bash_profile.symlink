@@ -1,0 +1,2 @@
+export BASH=$HOME/.dotfiles/bash
+for config_file ($BASH/**/*.bash) source $config_file

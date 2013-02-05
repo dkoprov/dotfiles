@@ -1,0 +1,44 @@
+[user]
+	name = Dmitry Koprov
+	email = dmitry.koprov@gmail.com
+[github]
+	user = dkoprov
+	token = 97464ea243f84f5943f516749663c3ac
+[color]
+  ui = true
+[color "diff"]
+  whitespace = red reverse
+[core]
+  whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+[alias]
+  s  = status --short
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  dc = diff --cached
+  dt = difftool
+  ls = ls-files
+	lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(white)%d%Creset %s %Cgreen(%cr) %C(white)<%an>%Creset' --abbrev-commit --decorate
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+
+  # Show files ignored by git:
+  ign = ls-files -o -i --exclude-standard
+
+  #merges
+  ours = "!f() { git co --ours $@ && git add $@; }; f"
+  theirs = "!f() { git co --theirs $@ && git add $@; }; f"
+[push]
+  default = current
+[pull]
+  default = current
+
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[mergetool]
+	keepBackup = true

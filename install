@@ -1,0 +1,61 @@
+#!/bin/zsh
+
+autoload colors && colors
+
+echo "\n$fg[green]Installing...$reset_color"
+
+# Reacts to user input when a link exists
+# Y: remove and re-link this file
+# n: do nothing, continue
+# A: remove and re-link all files without prompting
+# q: quit, exit 1
+process_exists () {
+  echo "$fg[yellow]  ☆  $2 already exists. Overwrite? [(Y)es (n)o (A)ll (q)uit]$reset_color"
+
+  read -qs action
+
+  case $action in
+  Y)  make_link $1 $2
+      ;;
+  A)  link_all=0
+      make_link $1 $2
+      ;;
+  q)  echo "$fg[red]Goodbye!$reset_color"
+      exit 1
+      ;;
+  *)  echo "$fg[red]  ☆  Okay, not linking.$reset_color"
+  esac
+}
+
+# Creates a symlink, first removing it if it already exists
+make_link () {
+  if [ -e $2 ]; then
+    rm $2
+  fi
+
+  ln -s $1 $2
+
+  echo "$fg[green]  ★  $2 linked!$reset_color"
+}
+
+
+# Loop over all symlink files in the directory, linking them
+# or prompting for instructions when necessary
+for symlink (./**/*.symlink) {
+  link_to_path="$(pwd)$(echo $symlink | sed 's/\.//')"
+  link_from_path="$HOME/.$(basename $symlink | awk -F. '{ print $1 }')"
+
+  if [ $link_all ]; then
+    make_link $link_to_path $link_from_path
+  else
+    if [ -e $link_from_path ]; then
+      process_exists $link_to_path $link_from_path
+    else
+      make_link $link_to_path $link_from_path
+    fi
+  fi
+}
+
+echo "$fg[green]Done!\n$reset_color"
+
+exit 0

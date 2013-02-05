@@ -1,0 +1,22 @@
+#!/bin/zsh
+
+autoload colors && colors
+
+echo "\n$fg[green]Uninstalling...$reset_color"
+
+for symlink (./**/*.symlink) {
+  link_from_path="$HOME/.$(basename $symlink | awk -F. '{ print $1 }')"
+
+  if [ -e $link_from_path ]; then
+    if [ -h $link_from_path ]; then
+      rm $link_from_path
+      echo "$fg[green]  ★  $link_from_path removed!$reset_color"
+    else
+      echo "$fg[red]  ☆  $link_from_path is not a symbolic link. Ignoring.$reset_color"
+    fi
+  fi
+}
+
+echo "$fg[green]Done!\n$reset_color"
+
+exit 0
