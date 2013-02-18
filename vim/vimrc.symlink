@@ -24,9 +24,9 @@ set laststatus=2  " Always show status line.
 " Line numbers
 set number
 
-set background=dark
+set background=light
 color spike
-color Tomorrow-Night
+color solarized
 
 " Search settings
 set hlsearch
@@ -257,7 +257,7 @@ function! RunSpec(args)
   else
     let spec = "rspec"
   end
-  let cmd = ":! " . spec . " % -cfn " . a:args
+  let cmd = ":! bundle exec " . spec . " % -cfn " . a:args
   execute cmd
 endfunction
 
