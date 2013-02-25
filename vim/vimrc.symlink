@@ -46,7 +46,7 @@ set history=50
 
 " Tab completion
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn
 
 let mapleader = ","
 
@@ -343,7 +343,8 @@ function! SuperCleverTab()
     endif
   endif
 endfunction
-inoremap <Tab> <C-R>=SuperCleverTab()<cr>
+"inoremap <Tab> <C-R>=SuperCleverTab()<cr>
+inoremap <Tab> <c-]>
 
 " Source a local configuration file if available.
 if filereadable(expand("~/.vimrc.local"))
