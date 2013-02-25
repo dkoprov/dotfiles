@@ -19,7 +19,7 @@ git_dirty () {
     arr=(${(f)st})
     if [[ $st =~ "nothing to commit" ]]; then
     else
-      echo "%{$fg[white]%} +%{$reset_color%}"
+      echo "%{$fg[red]%} +%{$reset_color%}"
     fi
   fi
 }
