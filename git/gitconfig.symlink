@@ -20,7 +20,7 @@
   dc = diff --cached
   dt = difftool
   ls = ls-files
-	lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(white)%d%Creset %s %Cgreen(%cr) %C(white)<%an>%Creset' --abbrev-commit --decorate
+	lg = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --decorate
   ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 
   # Show files ignored by git:
