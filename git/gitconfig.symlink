@@ -42,3 +42,5 @@
 	trustExitCode = true
 [mergetool]
 	keepBackup = true
+[init]
+	templatedir = ~/.git_template
