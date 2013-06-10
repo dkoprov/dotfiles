@@ -18,3 +18,7 @@ alias gtree='git log --graph --full-history --all --color --pretty=format:"%x1b[
 # pwd and cd aliases
 alias .='pwd'
 alias ..='cd ..'
+
+alias redis_start='redis-server /usr/local/etc/redis.conf'
+
+alias trunc_file='echo -n > $<'
