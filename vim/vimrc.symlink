@@ -96,14 +96,15 @@ match RedundantSpaces /\s\+$\| \+\ze\t/ "\ze sets end of match so only spaces hi
 " ,h to toggle search result highlighting
 map <silent> <leader>h :set hls!<CR>
 
-" ,w to toggle line wrap
-map <silent> <Leader>w :set wrap!<CR>
-
 " BufExplorer
 map <silent> <unique> <Leader>. :BufExplorerHorizontalSplit<CR>
 
 " delete buffer :bd
 map <Leader>w :bd<CR>
+" next buffer
+map <Leader>n :bn<CR>
+" prev buffer
+map <Leader>m :bp<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " A whole bunch of NERDTree configuration stolen from carlhuda's janus
@@ -327,6 +328,9 @@ command! Q :q
 
 inoremap <Tab> <C-X><C-n>
 inoremap <leader><Tab> <C-X><C-]>
+
+inoremap <Leader>/ <esc>:w<cr>a
+nnoremap <Leader>/ :w <esc>
 
 
 " Source a local configuration file if available.

@@ -52,3 +52,9 @@
 [submodule "ag.vim"]
 	path = vim/vim.symlink/bundle/ag
 	url = git://github.com/epmatsw/ag.vim.git
+[submodule "vim/vim.symlink/bundle/autosess"]
+	path = vim/vim.symlink/bundle/autosess
+	url = https://github.com/powerman/vim-plugin-autosess
+[submodule "vim/vim.symlink/bundle/solarized"]
+  path = vim/vim.symlink/bundle/solarized
+  url = https://github.com/altercation/vim-colors-solarized
