@@ -44,3 +44,8 @@
 	keepBackup = true
 [init]
 	templatedir = ~/.git_template
+
+[merge "gemfilelock"]
+  name = relocks the gemfile.lock
+  driver = bundle lock
+# don't forget to put this: 'Gemfile.lock merge=gemfilelock' into .git/info/attributes
