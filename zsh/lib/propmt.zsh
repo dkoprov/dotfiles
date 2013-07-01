@@ -24,16 +24,15 @@ git_dirty () {
   fi
 }
 
-rbenv_prompt_info() {
-  local ruby_version
-  ruby_version=$(rbenv version 2> /dev/null) || return
-  echo "‹$ruby_version" | sed 's/[ \t].*$/›/'
+git_shashes_count () {
+  st_num=$(/usr/bin/git stash list 2> /dev/null | wc -l | tr -d ' ')
+  if [[ $st_num == "0" ]]; then
+    echo ""
+  else
+    echo " %{$fg[red]%} ($st_num)%{$reset_color%}"
+  fi
 }
 
-# with ruby information
-#export PROMPT='%{$reset_color%}%{$fg[blue]%}%c%{$reset_color%} %{$fg[red]%}$(rbenv_prompt_info)%{$reset_color%}% $(git_branch)$(git_dirty) 
-#%# '
-
 # wo ruby info
-export PROMPT='%{$reset_color%}%{$fg[blue]%}%c%{$reset_color%} $(git_branch)$(git_dirty)
+export PROMPT='%{$reset_color%}%{$fg[blue]%}%c%{$reset_color%} $(git_branch)$(git_dirty)$(git_shashes_count)
 %# '
