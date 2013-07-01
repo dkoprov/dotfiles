@@ -12,5 +12,6 @@
 --ignore-dir=tmp
 --ignore-dir=doc
 --ignore-dir=coverage
+--ignore-dir=vendor
 
 --color
