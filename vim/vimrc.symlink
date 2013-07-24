@@ -277,7 +277,7 @@ map !S :call RunSpec("")
 " Spin spec pusher
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! PushToSpin(args)
-  let cmd = ":! spin push %" . a:args
+  let cmd = ":! bundle exec spin push %" . a:args
   execute cmd
 endfunction
 
@@ -318,6 +318,8 @@ nmap <silent> <Leader>sw :call StripTrailingWhitespace()<CR>
 let g:syntastic_enable_signs=1
 let g:syntastic_enable_balloons=0
 let g:syntastic_auto_loc_list=1
+let g:syntastic_quiet_warnings=1
+let g:syntastic_loc_list_height=4
 
 " use ,F to jump to tag in a horizontal split
 nnoremap <silent> ,F :let word=expand("<cword>")<CR>:sp<CR>:wincmd w<cr>:exec("tag ". word)<cr>
@@ -328,10 +330,6 @@ command! Q :q
 
 inoremap <Tab> <C-X><C-n>
 inoremap <leader><Tab> <C-X><C-]>
-
-inoremap <Leader>/ <esc>:w<cr>a
-nnoremap <Leader>/ :w <esc>
-
 
 " Source a local configuration file if available.
 if filereadable(expand("~/.vimrc.local"))
