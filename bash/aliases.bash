@@ -13,5 +13,7 @@ alias .='pwd'
 alias ..='cd ..'
 alias ...='cd ../..'
 
+alias fs='FAST_SPEC_START=1 ./bin/test'
+
 # mkdir
 mcd() { mkdir -p "$@" && cd "$@"; }

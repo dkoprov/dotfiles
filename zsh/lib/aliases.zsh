@@ -21,4 +21,4 @@ alias ..='cd ..'
 
 alias redis_start='redis-server /usr/local/etc/redis.conf'
 
-alias trunc_file='echo -n > $<'
+alias fs='FAST_SPEC_START=1 ./bin/test'
