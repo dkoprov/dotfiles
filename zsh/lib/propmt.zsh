@@ -29,4 +29,4 @@ git_stashes_count () {
 
 # wo ruby info
 export PROMPT='%m %{$reset_color%}%{$fg[blue]%}%c%{$reset_color%} $(git_branch)$(git_dirty)$(git_stashes_count)
-% '
+%% '
