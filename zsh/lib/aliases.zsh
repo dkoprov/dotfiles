@@ -1,5 +1,5 @@
 alias reload!='source $HOME/.zshrc'
-alias vi=vim
+alias vi='mvim -v'
 
 alias glg='git lg -15'
 alias gls='git ll -15'
