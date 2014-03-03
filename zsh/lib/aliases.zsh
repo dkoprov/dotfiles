@@ -22,3 +22,5 @@ alias ..='cd ..'
 alias redis_start='redis-server /usr/local/etc/redis.conf'
 
 alias fs='FAST_SPEC_START=1 ./bin/test'
+
+alias git_prunk_merged_branches='git co master && git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'

@@ -2,10 +2,10 @@ export ZSH=$HOME/.dotfiles/zsh
 
 fpath=($ZSH/functions $fpath)
 
-export BUNDLER_EDITOR=vi
+export BUNDLER_EDITOR=vim
 
 # for sml
-export PATH=/usr/local/Cellar/smlnj/110.75/libexec/bin:$PATH
+# export PATH=/usr/local/Cellar/smlnj/110.75/libexec/bin:$PATH
 # for homebrew
 export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 # for rbenv
