@@ -23,4 +23,13 @@ alias redis_start='redis-server /usr/local/etc/redis.conf'
 
 alias fs='FAST_SPEC_START=1 ./bin/test'
 
-alias git_prunk_merged_branches='git co master && git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
+alias git_clear_merged_branches='git co master && git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
+alias workout-old='cd ~/work/octoshell'
+alias workout-basic='cd ~/work/octoshell2/octoshell-basic'
+alias workout='cd ~/work/octoshell2/octoshell'
+
+alias obi='bundle install --path=~/work/octoshell-bundle'
+
+alias setjdk6='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)'
+alias setjdk7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)'
+alias setjdk8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
