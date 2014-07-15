@@ -9,6 +9,8 @@ syntax on
 " Current line highlight
 set cursorline
 
+set colorcolumn=81
+
 " Enabling mouse
 set mouse=a
 
